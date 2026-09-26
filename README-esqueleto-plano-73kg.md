@@ -202,7 +202,7 @@ Sem contar calorias? Use a balança como juiz (§7).
 
 > Intolerante à lactose (não alérgico)? **Whey isolado** geralmente é bem tolerado. Alérgico à proteína do leite? Evite todos os derivados e use proteína vegetal.
 
-### 6.4 Shake hipercalórico (~650 kcal · ~30 g proteína)
+### 6.4 Shake hipercalórico (~690 kcal · ~27 g proteína)
 
 300 ml bebida de soja + 1 banana + 4 colheres (sopa) de aveia + 2 colheres (sopa) de pasta de amendoim + 1 colher de mel (+ 1 dose de proteína vegetal, se tiver).
 
@@ -295,3 +295,20 @@ Flexão (nível ___)  |           | ___ / ___ / ___ reps
 **Resumo:** Treino A/B/A, corpo inteiro · 150 flexões/dia (seg–sáb) · dupla progressão · ~2950 kcal e 130 g de proteína sem leite de vaca · shake diário · pesagem 3×/semana e ajuste a cada 2 semanas · sono 7–9 h.
 
 Bom treino, JEFERSON. Consistência > perfeição.
+
+---
+
+## Anexo — Mix caseiros turbinados (sem leite de vaca)
+
+| Mix | Receita | kcal | Prot. |
+|-----|---------|-----:|------:|
+| Shake da casa | 300 ml bebida de soja + 1 banana + 4 col. aveia + 2 col. pasta de amendoim + 1 col. mel | 690 | 27 g |
+| Mix de bolso | 50 g amendoim torrado + 30 g uva-passa + 1 col. mel | 440 | 13 g |
+| Banana turbinada | 1 banana amassada + 2 col. aveia + 1 col. pasta de amendoim + fio de mel | 330 | 9 g |
+| Cuscuz reforçado | 1 prato de cuscuz + 2 ovos fritos + 1 col. azeite | 510 | 16 g |
+| Farofa de ovo | 2 ovos mexidos no azeite + 2 col. farinha de mandioca | 360 | 13 g |
+| Pão de rei | 2 pães + 2 ovos fritos + 1 col. pasta de amendoim | 610 | 26 g |
+
+**Mais calóricos do dia a dia:** azeite/óleo (120 kcal/colher), amendoim e pasta de amendoim, abacate, carne moída, linguiça, sardinha em óleo, macarrão, mandioca, rapadura e goiabada.
+
+A página do plano (`index.html`) tem um contador de calorias: toque no que comeu e ela soma kcal e proteína do dia.

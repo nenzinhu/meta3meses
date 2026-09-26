@@ -40,6 +40,20 @@ td.n{white-space:nowrap}
 .muted{color:var(--muted)}
 ul{margin:0;padding-left:1.2em}
 .log{font-size:.9rem;color:var(--muted)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.eaten{list-style:none;padding:0;margin:0;display:grid;gap:4px}
+.eaten li{display:flex;justify-content:space-between;align-items:center;gap:8px;border-bottom:1px solid var(--line);padding-block:2px}
+.eaten button{min-height:36px;padding:4px 10px}
+.cat{margin:8px 0 6px;font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
+.food{display:grid;gap:2px;text-align:left;background:var(--bg);padding:8px 10px}
+.food b{font-weight:600;line-height:1.2}
+.food small{color:var(--muted)}
+.food .k{color:var(--warm);font-weight:600}
+.mixes{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}
+.mix{border:1px solid var(--line);border-radius:8px;padding:12px;display:grid;gap:6px;align-content:start}
+.mix h3{margin:0;font-size:1.05rem}
+.mix p{margin:0;font-size:.92rem}
 @media (prefers-reduced-motion:reduce){.bar>i{transition:none}}
 </style>
 
@@ -95,13 +109,40 @@ ul{margin:0;padding-left:1.2em}
     <p class="muted" style="margin:0">Descanso: 90 s nos 3 primeiros, 45–60 s nos outros. Aquecimento de 5 min antes.</p>
   </section>
 
+  <section aria-labelledby="h-cal">
+    <h2 id="h-cal">Calorias de hoje</h2>
+    <div class="row"><span class="big num" id="kcalN">0</span><span class="muted">/ 3000 kcal · <span class="num" id="protN">0</span> / 130 g proteína</span></div>
+    <div class="bar" aria-hidden="true"><i id="kcalBar" style="width:0%"></i></div>
+    <p class="muted" id="kcalFalta" style="margin:0"></p>
+    <ul class="eaten" id="eaten"></ul>
+    <form class="row" id="customForm">
+      <label for="cNome" class="sr">Outro alimento</label>
+      <input id="cNome" type="text" placeholder="Outro alimento" style="width:11em">
+      <label for="cKcal" class="sr">kcal</label>
+      <input id="cKcal" type="number" min="1" max="3000" inputmode="numeric" placeholder="kcal" required>
+      <button type="submit">Adicionar</button>
+    </form>
+  </section>
+
+  <section aria-labelledby="h-mix">
+    <h2 id="h-mix">Mix caseiros turbinados</h2>
+    <p class="muted" style="margin:0">Receitas com o que tem em casa, sem leite de vaca. Toque em “Comi” para somar.</p>
+    <div class="mixes" id="mixes"></div>
+  </section>
+
+  <section aria-labelledby="h-alim">
+    <h2 id="h-alim">Toque no que comeu</h2>
+    <p class="muted" style="margin:0">Valores aproximados por porção caseira. Os mais calóricos têm ★.</p>
+    <div id="foods"></div>
+  </section>
+
   <section aria-labelledby="h-comida">
     <h2 id="h-comida">Comida por dia</h2>
     <div class="tbl"><table>
       <tbody>
         <tr><th scope="row">Calorias</th><td class="num">2900–3000 kcal</td></tr>
         <tr><th scope="row">Proteína</th><td class="num">120–140 g (4 refeições de 30–35 g)</td></tr>
-        <tr><th scope="row">Shake diário</th><td>300 ml bebida de soja + 1 banana + 4 col. aveia + 2 col. pasta de amendoim + mel ≈ 650 kcal</td></tr>
+        <tr><th scope="row">Shake diário</th><td>300 ml bebida de soja + 1 banana + 4 col. aveia + 2 col. pasta de amendoim + mel ≈ 690 kcal</td></tr>
       </tbody>
     </table></div>
     <ul>
@@ -163,6 +204,83 @@ ul{margin:0;padding-left:1.2em}
     set('flex-'+today,Math.max(0,get('flex-'+today,0)+Number(b.dataset.add)));renderFlex();
   }));
 
-  renderPeso();renderFlex();
+  // [nome, porção, kcal, proteína g, ★ calórico]
+  const FOODS={
+    'Base do prato':[
+      ['Arroz','4 col. sopa',130,3],['Feijão','1 concha',100,6],['Macarrão','1 prato',310,11,1],
+      ['Cuscuz','1 prato',170,4],['Batata-doce','1 média',130,2],['Mandioca cozida','1 pedaço grande',190,2],
+      ['Farofa','2 col. sopa',130,1],['Pão francês','1 unid.',150,5],['Tapioca','1 média',170,0]],
+    'Proteína':[
+      ['Ovo cozido','1 unid.',75,6],['Ovo frito','1 unid.',110,6],['Frango','1 filé 100 g',165,31],
+      ['Carne moída','100 g',215,26,1],['Bife','1 médio 120 g',250,32,1],['Linguiça/calabresa','1 gomo',190,9,1],
+      ['Sardinha em óleo','1 lata',250,25,1],['Atum','1 lata',140,30],['Bebida de soja','1 copo 250 ml',110,8]],
+    'Calorias fáceis':[
+      ['Azeite/óleo','1 col. sopa',120,0,1],['Pasta de amendoim','1 col. sopa',90,4,1],['Amendoim torrado','1 punhado 30 g',175,7,1],
+      ['Aveia','2 col. sopa',115,4],['Banana','1 média',95,1],['Abacate','½ unid.',160,2,1],
+      ['Mel','1 col. sopa',60,0],['Uva-passa','1 punhado 30 g',90,1],['Goiabada','1 fatia',110,0],
+      ['Rapadura','1 pedaço 30 g',110,0],['Café com açúcar','1 xícara',40,0]]
+  };
+  const MIXES=[
+    ['Shake da casa',690,27,'300 ml bebida de soja + 1 banana + 4 col. aveia + 2 col. pasta de amendoim + 1 col. mel. Bata no liquidificador.'],
+    ['Mix de bolso',440,13,'50 g amendoim torrado + 30 g uva-passa + 1 col. mel. Deixe num pote e belisque ao longo do dia.'],
+    ['Banana turbinada',330,9,'1 banana amassada + 2 col. aveia + 1 col. pasta de amendoim + fio de mel. Pronto em 2 min.'],
+    ['Cuscuz reforçado',510,16,'1 prato de cuscuz + 2 ovos fritos + 1 col. azeite por cima.'],
+    ['Farofa de ovo',360,13,'2 ovos mexidos no azeite + 2 col. farinha de mandioca. Acompanha arroz e feijão.'],
+    ['Pão de rei',610,26,'2 pães + 2 ovos fritos + 1 col. pasta de amendoim.']
+  ];
+
+  const logKey='food-'+today;
+  function renderCal(){
+    const log=get(logKey,[]);
+    const k=log.reduce((s,f)=>s+f.k,0), p=log.reduce((s,f)=>s+f.p,0);
+    document.getElementById('kcalN').textContent=k;
+    document.getElementById('protN').textContent=Math.round(p);
+    document.getElementById('kcalBar').style.width=Math.min(100,k/3000*100)+'%';
+    document.getElementById('kcalFalta').textContent=k>=3000?'Meta batida hoje.':'Faltam '+(3000-k)+' kcal.';
+    const ul=document.getElementById('eaten');ul.innerHTML='';
+    log.forEach((f,i)=>{
+      const li=document.createElement('li');
+      li.innerHTML='<span></span><span class="row"><span class="num muted"></span><button type="button">Remover</button></span>';
+      li.children[0].textContent=f.n;
+      li.querySelector('.num').textContent=f.k+' kcal';
+      li.querySelector('button').setAttribute('aria-label','Remover '+f.n);
+      li.querySelector('button').onclick=()=>{const l=get(logKey,[]);l.splice(i,1);set(logKey,l);renderCal()};
+      ul.appendChild(li);
+    });
+  }
+  function addFood(n,k,p){const l=get(logKey,[]);l.push({n,k,p});set(logKey,l);renderCal()}
+
+  const foodsEl=document.getElementById('foods');
+  Object.entries(FOODS).forEach(([cat,items])=>{
+    const h=document.createElement('p');h.className='cat';h.textContent=cat;foodsEl.appendChild(h);
+    const g=document.createElement('div');g.className='grid';
+    items.forEach(([n,por,k,p,star])=>{
+      const b=document.createElement('button');b.type='button';b.className='food';
+      b.innerHTML='<b></b><small></small><span class="k num"></span>';
+      b.children[0].textContent=(star?'★ ':'')+n;
+      b.children[1].textContent=por+' · '+p+' g prot.';
+      b.children[2].textContent='+'+k+' kcal';
+      b.onclick=()=>addFood(n+' ('+por+')',k,p);
+      g.appendChild(b);
+    });
+    foodsEl.appendChild(g);
+  });
+  const mixEl=document.getElementById('mixes');
+  MIXES.forEach(([n,k,p,rec])=>{
+    const d=document.createElement('div');d.className='mix';
+    d.innerHTML='<h3></h3><span class="num k" style="color:var(--warm);font-weight:600"></span><p></p><button type="button" class="primary">Comi</button>';
+    d.children[0].textContent=n;d.children[1].textContent=k+' kcal · '+p+' g proteína';d.children[2].textContent=rec;
+    d.querySelector('button').onclick=()=>addFood(n,k,p);
+    mixEl.appendChild(d);
+  });
+  document.getElementById('customForm').addEventListener('submit',e=>{
+    e.preventDefault();
+    const k=parseInt(document.getElementById('cKcal').value,10);
+    if(!(k>0&&k<=3000))return;
+    addFood(document.getElementById('cNome').value.trim()||'Outro',k,0);
+    e.target.reset();
+  });
+
+  renderPeso();renderFlex();renderCal();
 })();
 </script>

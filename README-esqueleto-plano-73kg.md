@@ -57,6 +57,37 @@ Ritmo: **desce em 2–3 s, sobe em 1 s**. Pare cada série com **1–2 repetiç�
 
 ---
 
+### Versão simples — só flexões + 2 halteres de 4 kg (3×/semana)
+
+Use esta versão se o equipamento for só um par de halteres de 4 kg. Faça **seg, qua e sex** (o mesmo treino nos 3 dias). ~40 min.
+
+**Método "lento e perto do limite":** 4 kg é leve para as pernas, então a dificuldade vem da **execução**:
+- **Desce em 3 s, pausa 1 s embaixo, sobe em 1 s.**
+- Cada série vai até faltar **1–2 reps** para não conseguir mais.
+- Quando passar do topo das reps → vá para o **próximo nível** do exercício.
+
+| # | Exercício | Séries × Reps | Descanso |
+|---|-----------|---------------|----------|
+| 1 | Agachamento goblet (os 2 halteres no peito = 8 kg) | 3 × 15–25 | 90 s |
+| 2 | Afundo búlgaro (pé de trás na cadeira, 4 kg em cada mão) | 3 × 10–15 cada perna | 90 s |
+| 3 | Flexão de braço | 3 × máx. −2 | 90 s |
+| 4 | Terra romeno unilateral (4 kg em cada mão, 1 perna) | 3 × 10–15 cada perna | 60 s |
+| 5 | Remada unilateral apoiado na cadeira (4 kg, descida em 4 s) | 3 × 15–25 cada braço | 60 s |
+| 6 | Ponte de glúteo em 1 perna (4 kg no quadril) | 2 × 12–20 cada perna | 60 s |
+| 7 | Rosca direta, um braço de cada vez (sobe 1 s, desce 4 s) | 3 × 15–25 | 60 s |
+| 8 | Panturrilha em 1 perna no degrau (4 kg na mão) | 3 × 15–25 | 45 s |
+
+**Níveis das pernas (quando o atual passar do topo):**
+- Agachamento: goblet → goblet com pausa de 3 s embaixo → **afundo búlgaro** com os 2 halteres → búlgaro com o pé da frente num livro (amplitude maior)
+- Ponte: 2 pernas → 1 perna → 1 perna com ombros no sofá (hip thrust)
+- Terra romeno: 2 pernas → 1 perna → 1 perna com descida em 5 s
+
+**Aquecimento (5 min):** 20 agachamentos sem peso, 10 afundos, 10 flexões fáceis, giros de ombro e quadril.
+
+**Por que funciona:** séries unilaterais (1 perna) dobram a carga em cada perna sem precisar de peso extra, e a descida lenta com pausa deixa 8 kg "pesados". É o jeito mais fácil de fortalecer pernas em casa com pouco peso.
+
+---
+
 ### Desafio diário — 150 flexões espalhadas no dia (6×/semana)
 
 Meta: **150 flexões por dia**, divididas em várias séries ao longo do dia, de segunda a sábado. **Domingo: zero.**

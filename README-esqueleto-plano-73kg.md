@@ -57,6 +57,34 @@ Ritmo: **desce em 2–3 s, sobe em 1 s**. Pare cada série com **1–2 repetiç�
 
 ---
 
+### Desafio diário — 150 flexões espalhadas no dia (6×/semana)
+
+Meta: **150 flexões por dia**, divididas em várias séries ao longo do dia, de segunda a sábado. **Domingo: zero.**
+
+**Regras para crescer sem se machucar:**
+- **Nunca vá até a falha.** Cada série fica em **~50% do seu máximo**. Se você faz 20 no máximo, faça séries de 10 (15 séries no dia). Com máximo de 30, séries de 15 (10 séries).
+- **Espaçe as séries:** pelo menos 30–60 min entre elas (ex.: ao acordar, a cada intervalo, antes do banho).
+- **Nos dias de Treino A**, as flexões do treino **contam** para as 150. Faça o treino primeiro e complete o resto depois.
+- **Varie a pegada** para não sobrecarregar sempre o mesmo ponto: alterne séries de pegada normal, fechada (tríceps) e aberta (peito). Se tiver, use apoios de flexão ou halteres no chão para poupar os punhos.
+
+**Suba o volume aos poucos:**
+
+| Semanas | Flexões/dia |
+|---------|-------------|
+| 1 | 60 |
+| 2 | 90 |
+| 3 | 120 |
+| 4 em diante | **150** |
+| 8 (deload) | 75 |
+
+**Teste o máximo a cada 4 semanas**, num domingo à tarde descansado, e ajuste o tamanho das séries.
+
+**Sinais de alerta — reduza para metade por 1 semana:** dor no ombro, cotovelo ou punho, ou flexões do Treino A caindo de uma semana para outra.
+
+**Comida:** 150 flexões/dia gastam ~50–100 kcal. Pouco, mas se o peso travar, é mais um motivo para somar +300 kcal (§7).
+
+---
+
 ## 3. Técnica essencial
 
 **Flexão de braço** — mãos na largura dos ombros, corpo reto (glúteo e abdômen contraídos), cotovelos ~45° do tronco, peito quase no chão.
@@ -233,6 +261,6 @@ Flexão (nível ___)  |           | ___ / ___ / ___ reps
 
 ---
 
-**Resumo:** Treino A/B/A, corpo inteiro · dupla progressão · ~2950 kcal e 130 g de proteína sem leite de vaca · shake diário · pesagem 3×/semana e ajuste a cada 2 semanas · sono 7–9 h.
+**Resumo:** Treino A/B/A, corpo inteiro · 150 flexões/dia (seg–sáb) · dupla progressão · ~2950 kcal e 130 g de proteína sem leite de vaca · shake diário · pesagem 3×/semana e ajuste a cada 2 semanas · sono 7–9 h.
 
 Bom treino, JEFERSON. Consistência > perfeição.

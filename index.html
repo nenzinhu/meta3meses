@@ -1,0 +1,168 @@
+<title>Meta 73 kg</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Source+Sans+3:wght@400;600&display=swap">
+<style>
+:root{
+  --bg:#EEF1EF;--card:#FFFFFF;--ink:#17201C;--muted:#5B6862;--line:#D6DDD9;
+  --accent:#2E6B4E;--accent-ink:#FFFFFF;--warm:#B8621F;--soft:#E1EAE4;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#111715;--card:#1A2320;--ink:#E6ECE9;--muted:#98A6A0;--line:#2C3833;
+  --accent:#5FB38A;--accent-ink:#0D1411;--warm:#E39A5B;--soft:#22302A;color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#111715;--card:#1A2320;--ink:#E6ECE9;--muted:#98A6A0;--line:#2C3833;
+  --accent:#5FB38A;--accent-ink:#0D1411;--warm:#E39A5B;--soft:#22302A;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:16px/1.5 "Source Sans 3",system-ui,sans-serif;padding-inline:16px;padding-block:24px 48px}
+.wrap{max-width:760px;margin:0 auto;display:grid;gap:20px}
+h1,h2{font-family:"Barlow Condensed","Arial Narrow",sans-serif;text-transform:uppercase;letter-spacing:.02em;margin:0;text-wrap:balance}
+h1{font-size:2.6rem;line-height:1}
+h2{font-size:1.5rem}
+.sub{color:var(--muted);margin:4px 0 0}
+section{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px;display:grid;gap:12px}
+.num{font-variant-numeric:tabular-nums}
+.bar{height:12px;background:var(--soft);border-radius:6px;overflow:hidden}
+.bar>i{display:block;height:100%;background:var(--accent);transition:width .3s}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.big{font-family:"Barlow Condensed",sans-serif;font-size:2.4rem;font-weight:700;line-height:1}
+button,input{font:inherit}
+button{border:1px solid var(--line);background:var(--soft);color:var(--ink);border-radius:8px;padding:8px 14px;cursor:pointer;min-height:44px}
+button.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent);font-weight:600}
+button[aria-selected="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+button:focus-visible,input:focus-visible{outline:3px solid var(--warm);outline-offset:2px}
+input{border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:8px;padding:8px 10px;min-height:44px;width:7em}
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:.95rem}
+th,td{text-align:left;padding:8px 6px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+td.n{white-space:nowrap}
+.note{background:var(--soft);border-radius:8px;padding:10px 12px;font-size:.95rem}
+.muted{color:var(--muted)}
+ul{margin:0;padding-left:1.2em}
+.log{font-size:.9rem;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){.bar>i{transition:none}}
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>66 → 73 kg</h1>
+    <p class="sub">Plano de 12 semanas do Jeferson · treino em casa · sem leite de vaca</p>
+  </header>
+
+  <section aria-labelledby="h-peso">
+    <h2 id="h-peso">Peso</h2>
+    <div class="row">
+      <span class="big num" id="pesoAtual">66,0</span><span class="muted">kg de 73 kg</span>
+    </div>
+    <div class="bar" aria-hidden="true"><i id="pesoBar" style="width:0%"></i></div>
+    <form class="row" id="pesoForm">
+      <label for="pesoIn">Pesagem de hoje (kg)</label>
+      <input id="pesoIn" type="number" step="0.1" min="40" max="120" inputmode="decimal" required>
+      <button class="primary" type="submit">Registrar</button>
+    </form>
+    <p class="log" id="pesoLog">Nenhuma pesagem ainda. Pese em jejum, 3× por semana.</p>
+  </section>
+
+  <section aria-labelledby="h-flex">
+    <h2 id="h-flex">Flexões de hoje</h2>
+    <div class="row"><span class="big num" id="flexN">0</span><span class="muted">/ <span id="flexMeta">150</span></span></div>
+    <div class="bar" aria-hidden="true"><i id="flexBar" style="width:0%"></i></div>
+    <div class="row">
+      <button class="primary" data-add="10">+10</button>
+      <button data-add="15">+15</button>
+      <button data-add="20">+20</button>
+      <button data-add="-5">−5</button>
+    </div>
+    <p class="muted" style="margin:0">Séries em ~50% do seu máximo, espaçadas no dia. Domingo é folga. Semana 1: 60 · 2: 90 · 3: 120 · 4+: 150.</p>
+  </section>
+
+  <section aria-labelledby="h-treino">
+    <h2 id="h-treino">Treino — seg, qua, sex</h2>
+    <p class="note">Desce em 3 s, pausa 1 s embaixo, sobe em 1 s. Cada série até faltar 1–2 reps. Passou do topo das reps? Vá para o próximo nível.</p>
+    <div class="tbl"><table>
+      <thead><tr><th>Exercício</th><th>Séries × reps</th></tr></thead>
+      <tbody>
+        <tr><td>Agachamento goblet (2 halteres no peito = 8 kg)</td><td class="n num">3 × 15–25</td></tr>
+        <tr><td>Afundo búlgaro (pé de trás na cadeira)</td><td class="n num">3 × 10–15 / perna</td></tr>
+        <tr><td>Flexão de braço (contam para as 150)</td><td class="n num">3 × máx −2</td></tr>
+        <tr><td>Terra romeno em 1 perna</td><td class="n num">3 × 10–15 / perna</td></tr>
+        <tr><td>Remada unilateral apoiado na cadeira</td><td class="n num">3 × 15–25 / braço</td></tr>
+        <tr><td>Ponte de glúteo em 1 perna</td><td class="n num">2 × 12–20 / perna</td></tr>
+        <tr><td>Rosca direta, 1 braço por vez (desce em 4 s)</td><td class="n num">3 × 15–25</td></tr>
+        <tr><td>Panturrilha em 1 perna no degrau</td><td class="n num">3 × 15–25</td></tr>
+      </tbody>
+    </table></div>
+    <p class="muted" style="margin:0">Descanso: 90 s nos 3 primeiros, 45–60 s nos outros. Aquecimento de 5 min antes.</p>
+  </section>
+
+  <section aria-labelledby="h-comida">
+    <h2 id="h-comida">Comida por dia</h2>
+    <div class="tbl"><table>
+      <tbody>
+        <tr><th scope="row">Calorias</th><td class="num">2900–3000 kcal</td></tr>
+        <tr><th scope="row">Proteína</th><td class="num">120–140 g (4 refeições de 30–35 g)</td></tr>
+        <tr><th scope="row">Shake diário</th><td>300 ml bebida de soja + 1 banana + 4 col. aveia + 2 col. pasta de amendoim + mel ≈ 650 kcal</td></tr>
+      </tbody>
+    </table></div>
+    <ul>
+      <li>Coma a cada 3–4 h, sem esperar a fome.</li>
+      <li>Azeite em tudo: 1 colher = 120 kcal.</li>
+      <li>Ganhou menos de 0,3 kg na semana? Some 300 kcal/dia.</li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="h-metas">
+    <h2 id="h-metas">Metas a cada 2 semanas</h2>
+    <div class="tbl"><table>
+      <thead><tr><th>Semana</th><th>Peso alvo</th></tr></thead>
+      <tbody class="num">
+        <tr><td>0</td><td>66,0 kg</td></tr><tr><td>2</td><td>67,2 kg</td></tr>
+        <tr><td>4</td><td>68,4 kg</td></tr><tr><td>6</td><td>69,6 kg</td></tr>
+        <tr><td>8 (semana leve)</td><td>70,8 kg</td></tr><tr><td>10</td><td>72,0 kg</td></tr>
+        <tr><td>12</td><td><strong>73,0 kg</strong></td></tr>
+      </tbody>
+    </table></div>
+    <p class="muted" style="margin:0">Sono 7–9 h · água 2,5–3 L · foto e medida do braço a cada 4 semanas.</p>
+  </section>
+</div>
+
+<script>
+(function(){
+  const START=66, GOAL=73;
+  const get=(k,d)=>{try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}};
+  const set=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}};
+  const fmt=n=>n.toFixed(1).replace('.',',');
+  const today=new Date().toISOString().slice(0,10);
+
+  function renderPeso(){
+    const log=get('pesos',[]);
+    const atual=log.length?log[log.length-1].kg:START;
+    document.getElementById('pesoAtual').textContent=fmt(atual);
+    const pct=Math.max(0,Math.min(100,(atual-START)/(GOAL-START)*100));
+    document.getElementById('pesoBar').style.width=pct+'%';
+    if(log.length){
+      document.getElementById('pesoLog').textContent='Últimas: '+log.slice(-5).reverse()
+        .map(p=>p.d.slice(8,10)+'/'+p.d.slice(5,7)+' '+fmt(p.kg)).join(' · ');
+    }
+  }
+  document.getElementById('pesoForm').addEventListener('submit',e=>{
+    e.preventDefault();
+    const kg=parseFloat(document.getElementById('pesoIn').value);
+    if(!(kg>=40&&kg<=120))return;
+    const log=get('pesos',[]).filter(p=>p.d!==today);
+    log.push({d:today,kg});set('pesos',log);
+    document.getElementById('pesoIn').value='';renderPeso();
+  });
+
+  function renderFlex(){
+    const n=get('flex-'+today,0), meta=150;
+    document.getElementById('flexN').textContent=n;
+    document.getElementById('flexBar').style.width=Math.min(100,n/meta*100)+'%';
+  }
+  document.querySelectorAll('[data-add]').forEach(b=>b.addEventListener('click',()=>{
+    set('flex-'+today,Math.max(0,get('flex-'+today,0)+Number(b.dataset.add)));renderFlex();
+  }));
+
+  renderPeso();renderFlex();
+})();
+</script>
